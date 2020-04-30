@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+        </array>
+        <array key="Raleway-Thin.ttf">
+            <string>Raleway-Thin</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--PickA Card View Controller-->
+        <scene sceneID="fqP-YK-MOE">
+            <objects>
+                <viewController id="zMl-fL-HMF" customClass="PickACardViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xRD-oS-Z27">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOq-bx-dag">
+                                <rect key="frame" x="148" y="363" width="116" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="34"/>
+                                <state key="normal" title="A Word">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="aWordButtonPressed:" destination="zMl-fL-HMF" eventType="touchUpInside" id="zCe-eG-Htr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c01-0l-ubX">
+                                <rect key="frame" x="137" y="502" width="139" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="34"/>
+                                <state key="normal" title="A Phrase">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="aPhraseButtonPressed:" destination="zMl-fL-HMF" eventType="touchUpInside" id="4Up-LD-D7e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGb-ad-hmP">
+                                <rect key="frame" x="132" y="820" width="152" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                                <state key="normal" title="Home Screen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goHomePickACard" modalPresentationStyle="fullScreen" id="8ll-c0-gcs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="trQ-01-ei9"/>
+                    </view>
+                    <connections>
+                        <outlet property="aPhraseButton" destination="c01-0l-ubX" id="Hsn-S6-cOo"/>
+                        <outlet property="aWordButton" destination="KOq-bx-dag" id="07K-dt-b67"/>
+                        <outlet property="getAnotherButton" destination="Op8-Mh-0by" id="b5V-w3-dkb"/>
+                        <outlet property="popupText" destination="sQV-x5-aHl" id="IpP-te-laE"/>
+                        <outlet property="popupView" destination="Fhc-9G-jYh" id="unE-un-zu1"/>
+                        <outlet property="returnHomeButton" destination="rGb-ad-hmP" id="4pd-jh-y1K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="heP-D9-9a2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Fhc-9G-jYh" customClass="customPopup" customModule="FinalProject" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQV-x5-aHl">
+                            <rect key="frame" x="0.0" y="44" width="300" height="207"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="28"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op8-Mh-0by">
+                            <rect key="frame" x="68" y="263" width="166" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                            <state key="normal" title="Get Another Word">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="getAnotherButtonPressed:" destination="zMl-fL-HMF" eventType="touchUpInside" id="CHO-Sq-zZY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="iiy-sH-ATD"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="-1433" y="-625"/>
+        </scene>
+        <!--How To View Controller-->
+        <scene sceneID="HbG-50-MTG">
+            <objects>
+                <viewController id="pEm-cJ-vIK" customClass="HowToViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BrR-h5-wqm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUB-5s-Zq0">
+                                <rect key="frame" x="131" y="821" width="152" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                                <state key="normal" title="Home Screen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goHomeHowTo" modalPresentationStyle="fullScreen" id="Zzd-03-pCh"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIw-bc-0og">
+                                <rect key="frame" x="20" y="204" width="374" height="489"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7IR-iR-rWA"/>
+                    </view>
+                    <connections>
+                        <outlet property="goHomeButton" destination="ZUB-5s-Zq0" id="6Sw-wo-lYd"/>
+                        <outlet property="howToTextView" destination="zIw-bc-0og" id="0Ic-uD-FP9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOd-TQ-iqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400.00000000000006" y="-625.44642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qwe-p4-KsA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfd-HD-YSi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="392"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FinalTAG" translatesAutoresizingMaskIntoConstraints="NO" id="7zx-vF-1N6">
+                                                <rect key="frame" x="-8" y="-98" width="414" height="588.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdd-aV-g2A">
+                                                <rect key="frame" x="139" y="354" width="137" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                                <state key="normal" title="10 Steps">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="4At-6V-ehM" kind="presentation" identifier="goToTenSteps" modalPresentationStyle="fullScreen" id="Kui-fn-Y1Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3g-wr-jq9">
+                                                <rect key="frame" x="20" y="0.0" width="48" height="29"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="14"/>
+                                                <state key="normal" title="How To">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="pEm-cJ-vIK" kind="presentation" identifier="goToHowTo" modalPresentationStyle="fullScreen" id="WDV-MC-9ep"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ts6-EJ-gxP">
+                                        <rect key="frame" x="0.0" y="400" width="414" height="418"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="n71-d5-kKM">
+                                                <rect key="frame" x="65.5" y="57.5" width="283.5" height="303.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foA-rW-W1N" customClass="CustomButton" customModule="FinalProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283.5" height="66.5"/>
+                                                        <rect key="contentStretch" x="0.0" y="0.050000000000000003" width="1" height="1"/>
+                                                        <size key="titleShadowOffset" width="10" height="10"/>
+                                                        <state key="normal" image="FinalPickACard 1"/>
+                                                        <connections>
+                                                            <action selector="PickACardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPL-21-1Gf"/>
+                                                            <segue destination="zMl-fL-HMF" kind="presentation" identifier="goToPickACard" modalPresentationStyle="fullScreen" id="PYH-4a-WqK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsu-8X-uPi" customClass="CustomButton" customModule="FinalProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="118.5" width="283.5" height="66.5"/>
+                                                        <size key="titleShadowOffset" width="40" height="40"/>
+                                                        <state key="normal" image="FinalMeditate 1"/>
+                                                        <connections>
+                                                            <segue destination="VtY-4K-yIx" kind="presentation" identifier="goToMeditate" modalPresentationStyle="fullScreen" id="91d-Lh-8cq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49O-G0-f3H" userLabel="Angel Button" customClass="CustomButton" customModule="FinalProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="237" width="283.5" height="66.5"/>
+                                                        <state key="normal" image="FinalAngels 1"/>
+                                                        <connections>
+                                                            <action selector="AngelsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YcK-Gc-5u5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="n71-d5-kKM" firstAttribute="centerY" secondItem="Ts6-EJ-gxP" secondAttribute="centerY" id="DPn-sD-BGD"/>
+                                            <constraint firstAttribute="width" secondItem="Ts6-EJ-gxP" secondAttribute="height" multiplier="207:209" id="R1m-Md-BkE"/>
+                                            <constraint firstItem="n71-d5-kKM" firstAttribute="centerX" secondItem="Ts6-EJ-gxP" secondAttribute="centerX" id="txz-4z-wcb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qwe-p4-KsA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q85-fW-3kd"/>
+                            <constraint firstItem="qwe-p4-KsA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="g0P-tY-b4u"/>
+                            <constraint firstItem="qwe-p4-KsA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iDX-9a-HJH"/>
+                            <constraint firstItem="qwe-p4-KsA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sPt-uv-KIZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="AngelsButton" destination="49O-G0-f3H" id="nur-eT-nEH"/>
+                        <outlet property="PickACardButton" destination="foA-rW-W1N" id="TyM-gP-3NS"/>
+                        <outlet property="tenStepsButton" destination="Hdd-aV-g2A" id="Zke-0I-2He"/>
+                        <segue destination="XVw-zc-Q9n" kind="presentation" identifier="goToAngelGame" modalPresentationStyle="fullScreen" id="znu-v7-CRd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400.00000000000006" y="140.625"/>
+        </scene>
+        <!--Angel Game View Controller-->
+        <scene sceneID="0bh-Vp-e2N">
+            <objects>
+                <viewController id="XVw-zc-Q9n" customClass="AngelGameViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zex-VA-MlK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8xh-BT-Gfg">
+                                <rect key="frame" x="138" y="816" width="140" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AngelWheel" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkY-Pc-qdr">
+                                <rect key="frame" x="0.0" y="10" width="829" height="782"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McC-PT-77a">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W4m-KS-Dfa">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reD-tJ-OKO">
+                                            <rect key="frame" x="8" y="47" width="87" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="14"/>
+                                            <state key="normal" title="Home Screen">
+                                                <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="goHomeAngelGame" modalPresentationStyle="fullScreen" id="Lya-0h-zAx"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4l-Yf-UUJ" customClass="CustomButton" customModule="FinalProject" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="816" width="139" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="f4l-Yf-UUJ" secondAttribute="height" multiplier="104:45" id="1WX-rH-Pw7"/>
+                                </constraints>
+                                <state key="normal" image="Spin 1">
+                                    <color key="titleShadowColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="spinWheelButtonPressed:" destination="XVw-zc-Q9n" eventType="touchUpInside" id="M1E-QT-K0k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="f4l-Yf-UUJ" secondAttribute="bottom" constant="30" id="Jak-uK-Qi4"/>
+                            <constraint firstItem="f4l-Yf-UUJ" firstAttribute="centerX" secondItem="zex-VA-MlK" secondAttribute="centerX" id="oTb-yz-1RI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rRa-7l-VAR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ocm-6z-fGO"/>
+                    <connections>
+                        <outlet property="actionChosenPopupAngelNameLabel" destination="dul-Jx-L51" id="qZf-6y-sb8"/>
+                        <outlet property="actionChosenPopupLabel" destination="JV3-1p-jId" id="ylB-DN-1OS"/>
+                        <outlet property="actionChosenPopupText" destination="HXY-kb-c0P" id="GoD-fu-1iq"/>
+                        <outlet property="actionChosenPopupView" destination="Pxy-uQ-LDy" id="eHS-Qd-l71"/>
+                        <outlet property="actionChosenResponseButton" destination="96s-Of-68f" id="2x6-o6-Li9"/>
+                        <outlet property="actionChosenSpinAgainButton" destination="veN-Lu-p4J" id="nuZ-ES-Hxk"/>
+                        <outlet property="backgroundBlur" destination="McC-PT-77a" id="EkP-ul-Xpj"/>
+                        <outlet property="popupAngelNameLabel" destination="GMg-1j-9Ji" id="Lde-HS-eDE"/>
+                        <outlet property="popupGoToActionsButton" destination="xdK-IO-bDd" id="0Ju-ed-fg5"/>
+                        <outlet property="popupLabel" destination="8cQ-wS-Jrd" id="GP7-DJ-gOc"/>
+                        <outlet property="popupSpinAgainButton" destination="Gte-n3-pdC" id="2F7-ea-gW9"/>
+                        <outlet property="popupText" destination="ibT-yM-zqO" id="X53-Hx-A94"/>
+                        <outlet property="popupView" destination="Gof-pE-Dnq" id="1RA-6a-YxZ"/>
+                        <outlet property="spinWheelButton" destination="f4l-Yf-UUJ" id="l1H-Na-iyB"/>
+                        <outlet property="spinWheelButtonShadow" destination="8xh-BT-Gfg" id="Dw7-5n-g9t"/>
+                        <outlet property="wheelLabel" destination="bkY-Pc-qdr" id="hkz-HS-Sqs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3j-2R-GE8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Gof-pE-Dnq" customClass="customPopup" customModule="FinalProject" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Angel is:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cQ-wS-Jrd">
+                            <rect key="frame" x="0.0" y="0.0" width="330" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMg-1j-9Ji">
+                            <rect key="frame" x="0.0" y="36" width="330" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibT-yM-zqO">
+                            <rect key="frame" x="7" y="88" width="307" height="269"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gte-n3-pdC">
+                            <rect key="frame" x="16" y="360" width="100" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="spinAgainButtonPressed:" destination="XVw-zc-Q9n" eventType="touchUpInside" id="JFj-uG-qTp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdK-IO-bDd">
+                            <rect key="frame" x="214" y="360" width="100" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="goToActionsButtonPressed:" destination="XVw-zc-Q9n" eventType="touchUpInside" id="Ejy-iB-VVg"/>
+                                <segue destination="iJu-hD-bBa" kind="presentation" identifier="goToActions" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ZRD-SV-LjY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="6lQ-lP-8Iu"/>
+                </view>
+                <view contentMode="scaleToFill" id="Pxy-uQ-LDy" customClass="customPopup" customModule="FinalProject" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Angel is:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dul-Jx-L51">
+                            <rect key="frame" x="0.0" y="0.0" width="330" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV3-1p-jId">
+                            <rect key="frame" x="0.0" y="36" width="330" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXY-kb-c0P">
+                            <rect key="frame" x="7" y="88" width="307" height="269"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veN-Lu-p4J">
+                            <rect key="frame" x="16" y="360" width="100" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="spinAgainButtonPressed:" destination="XVw-zc-Q9n" eventType="touchUpInside" id="kKa-dh-Swx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96s-Of-68f">
+                            <rect key="frame" x="214" y="360" width="100" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="actionChosenResponseButtonPressed:" destination="XVw-zc-Q9n" eventType="touchUpInside" id="kk0-N6-NZ4"/>
+                                <action selector="goToActionsButtonPressed:" destination="XVw-zc-Q9n" eventType="touchUpInside" id="MJT-gp-43z"/>
+                                <segue destination="dzP-qe-Sm7" kind="presentation" identifier="actionChosenGoToResponse" modalPresentationStyle="fullScreen" id="Nul-7F-Bq0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="i6L-dO-cVW"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="696" y="141"/>
+        </scene>
+        <!--Actions View Controller-->
+        <scene sceneID="nZy-Zd-kMZ">
+            <objects>
+                <viewController storyboardIdentifier="ActionsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iJu-hD-bBa" customClass="ActionsViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ExP-3K-S6p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActionWheel" translatesAutoresizingMaskIntoConstraints="NO" id="Er7-GV-v0B">
+                                <rect key="frame" x="-451" y="-17" width="896" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2om-Zk-VKm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ob2-jn-b2e">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8x-sD-FZR">
+                                            <rect key="frame" x="319" y="48" width="87" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="14"/>
+                                            <state key="normal" title="Home Screen">
+                                                <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="goHomeActionView" modalPresentationStyle="fullScreen" id="4YM-UQ-EWu"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHd-8s-pYT" customClass="CustomButton" customModule="FinalProject" customModuleProvider="target">
+                                <rect key="frame" x="138" y="812" width="139" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="Spin 1">
+                                    <color key="titleShadowColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="spinButtonPressed:" destination="iJu-hD-bBa" eventType="touchUpInside" id="UvE-WP-Hei"/>
+                                    <action selector="spinWheelButtonPressed:" destination="XVw-zc-Q9n" eventType="touchUpInside" id="TS6-ca-Ggz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RTH-db-7Li"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="smk-5n-zlh"/>
+                    <connections>
+                        <outlet property="actionWheel" destination="Er7-GV-v0B" id="0Hg-yE-Xpm"/>
+                        <outlet property="backgroundBlur" destination="2om-Zk-VKm" id="eik-GU-dMz"/>
+                        <outlet property="goToAngelResponseButton" destination="Ve9-gB-TIG" id="3I8-Vs-48L"/>
+                        <outlet property="popupActionDescriptionText" destination="ajv-0b-mzC" id="HzS-sI-TZ4"/>
+                        <outlet property="popupActionNameLabel" destination="7JS-GJ-0RY" id="TdF-4r-9IZ"/>
+                        <outlet property="popupLabel" destination="ecl-Hv-zl9" id="oci-I3-2Lr"/>
+                        <outlet property="popupView" destination="w16-I1-k26" id="lJJ-vN-hma"/>
+                        <outlet property="spinButton" destination="eHd-8s-pYT" id="Wch-hc-cbg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cIw-Th-aXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="w16-I1-k26" customClass="customPopup" customModule="FinalProject" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="330" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Action is:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecl-Hv-zl9">
+                            <rect key="frame" x="0.0" y="0.0" width="330" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JS-GJ-0RY">
+                            <rect key="frame" x="0.0" y="38" width="330" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajv-0b-mzC">
+                            <rect key="frame" x="0.0" y="90" width="330" height="245"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ve9-gB-TIG">
+                            <rect key="frame" x="16" y="343" width="298" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="goToAngelResponseButtonPressed:" destination="iJu-hD-bBa" eventType="touchUpInside" id="UkU-Wb-EjW"/>
+                                <segue destination="dzP-qe-Sm7" kind="presentation" identifier="goToResponse" modalPresentationStyle="fullScreen" id="8oW-Ci-Eg3"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="IR9-aL-G7m"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1570" y="141"/>
+        </scene>
+        <!--Meditate View Controller-->
+        <scene sceneID="u7S-ha-kOz">
+            <objects>
+                <viewController id="VtY-4K-yIx" customClass="MeditateViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GwC-M9-wW7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXa-dq-Z6C">
+                                <rect key="frame" x="204.5" y="445.5" width="5" height="5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="X2F-Td-af5"/>
+                                    <constraint firstAttribute="width" constant="5" id="vSD-Sm-tIk"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZe-7m-obX">
+                                <rect key="frame" x="93" y="193" width="210" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="Start Meditation">
+                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startMeditationButtonPressed:" destination="VtY-4K-yIx" eventType="touchUpInside" id="tKh-Tb-re1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTZ-Me-4Nw">
+                                <rect key="frame" x="146" y="831" width="127" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="Home Screen">
+                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hoHomeButtonPressed:" destination="VtY-4K-yIx" eventType="touchUpInside" id="Ena-Pr-CFm"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goHomeMeditation" modalPresentationStyle="fullScreen" id="few-XO-5PV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sXa-dq-Z6C" firstAttribute="centerX" secondItem="GwC-M9-wW7" secondAttribute="centerX" id="lMd-qp-10O"/>
+                            <constraint firstItem="sXa-dq-Z6C" firstAttribute="centerY" secondItem="GwC-M9-wW7" secondAttribute="centerY" id="xcd-uQ-3Sa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t2g-S7-Hww"/>
+                    </view>
+                    <connections>
+                        <outlet property="lightView" destination="sXa-dq-Z6C" id="43T-BA-YBT"/>
+                        <outlet property="returnHomeButton" destination="KTZ-Me-4Nw" id="tTW-AG-zZi"/>
+                        <outlet property="startMeditationButton" destination="hZe-7m-obX" id="pOj-LG-Vpc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kge-aY-zaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1433.3333333333335" y="140.625"/>
+        </scene>
+        <!--Response View Controller-->
+        <scene sceneID="Hbl-hu-hgu">
+            <objects>
+                <viewController id="dzP-qe-Sm7" customClass="ResponseViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k8G-Nd-P6O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="angelWhite" translatesAutoresizingMaskIntoConstraints="NO" id="hfK-WH-N2x">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ts1-Yc-hAk">
+                                <rect key="frame" x="87" y="193" width="240" height="511"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2d-QC-4E2">
+                                <rect key="frame" x="152" y="780" width="111" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                                <state key="normal" title="Finish">
+                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishButtonPressed:" destination="dzP-qe-Sm7" eventType="touchUpInside" id="lRG-fH-1hJ"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goBackHome" modalPresentationStyle="fullScreen" id="xJZ-oq-QAl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vff-zk-SCX">
+                                <rect key="frame" x="20" y="712" width="170" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                <state key="normal" title="Continue to the left">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSomeMoreButtonPressed:" destination="dzP-qe-Sm7" eventType="touchUpInside" id="nx9-pj-hOn"/>
+                                    <segue destination="XVw-zc-Q9n" kind="presentation" identifier="goBackToTheLeft" modalPresentationStyle="fullScreen" id="G1J-BS-Ayb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2Q-5x-JSd">
+                                <rect key="frame" x="224" y="712" width="170" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                <state key="normal" title="Continue to the right">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSomeMoreButtonPressed:" destination="dzP-qe-Sm7" eventType="touchUpInside" id="Ign-Un-WoO"/>
+                                    <segue destination="XVw-zc-Q9n" kind="presentation" identifier="goBackToTheRight" modalPresentationStyle="fullScreen" id="COt-te-uQy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4p-tq-N7L">
+                                <rect key="frame" x="168" y="724" width="79" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="10 Steps">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4At-6V-ehM" kind="presentation" identifier="goToCommunicatingTenSteps" modalPresentationStyle="fullScreen" id="zl1-KK-n5a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4FR-h6-NNe"/>
+                    </view>
+                    <connections>
+                        <outlet property="finish" destination="o2d-QC-4E2" id="JCa-fc-nIB"/>
+                        <outlet property="playSomeMore" destination="Vff-zk-SCX" id="5GS-Wx-bRB"/>
+                        <outlet property="playSomeMoreRight" destination="N2Q-5x-JSd" id="eAk-2o-5Hb"/>
+                        <outlet property="responseImageView" destination="hfK-WH-N2x" id="fpf-Sc-Z9w"/>
+                        <outlet property="responseTextView" destination="Ts1-Yc-hAk" id="qoH-cd-YSF"/>
+                        <outlet property="tenStepsButton" destination="a4p-tq-N7L" id="3Jq-TS-dHg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="00h-1P-SzG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="921"/>
+        </scene>
+        <!--Communicating Ten Steps View Controller-->
+        <scene sceneID="g3p-GA-zZ8">
+            <objects>
+                <viewController id="4At-6V-ehM" customClass="CommunicatingTenStepsViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8qq-LI-xCh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M5-a4-7bk">
+                                <rect key="frame" x="20" y="44" width="374" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSX-4Q-0TW">
+                                <rect key="frame" x="0.0" y="266" width="414" height="521"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82l-RT-7Cy">
+                                        <rect key="frame" x="0.0" y="8" width="414" height="541"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="MqU-Lt-vmb"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="FZI-bw-JxL"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdT-bw-0NB">
+                                <rect key="frame" x="20" y="814" width="153" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="Home Screen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goHome" modalPresentationStyle="fullScreen" id="5NZ-sY-hoE"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-06-AM8">
+                                <rect key="frame" x="20" y="102" width="374" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway Thin" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GD-Hf-jX5">
+                                <rect key="frame" x="241" y="813" width="153" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="Finished Steps">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="goHomeFinishedSteps" modalPresentationStyle="fullScreen" id="KKG-LV-AKQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="gCq-4c-BnK"/>
+                    </view>
+                    <connections>
+                        <outlet property="angelDescriptionText" destination="6AO-06-AM8" id="183-0o-NGF"/>
+                        <outlet property="angelNameLabel" destination="7M5-a4-7bk" id="2VO-bU-TOu"/>
+                        <outlet property="finishedTenStepsButton" destination="9GD-Hf-jX5" id="lbC-Cf-qvH"/>
+                        <outlet property="goHomeButton" destination="LdT-bw-0NB" id="bVY-lQ-3xA"/>
+                        <outlet property="tenStepsText" destination="82l-RT-7Cy" id="iZ9-6S-W2i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ei0-uB-Edy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1433.3333333333335" y="920.75892857142856"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Kui-fn-Y1Q"/>
+        <segue reference="Nul-7F-Bq0"/>
+        <segue reference="znu-v7-CRd"/>
+        <segue reference="xJZ-oq-QAl"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="ActionWheel" width="1000" height="1000"/>
+        <image name="AngelWheel" width="160.33332824707031" height="162.66667175292969"/>
+        <image name="FinalAngels 1" width="283.33334350585938" height="66.666664123535156"/>
+        <image name="FinalMeditate 1" width="283.33334350585938" height="66.666664123535156"/>
+        <image name="FinalPickACard 1" width="283.33334350585938" height="66.666664123535156"/>
+        <image name="FinalTAG" width="700" height="700"/>
+        <image name="Spin 1" width="138.33332824707031" height="50"/>
+        <image name="angelWhite" width="313" height="550.66668701171875"/>
+    </resources>
+</document>
